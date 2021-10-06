@@ -2,14 +2,14 @@
 const express = require("express");
 const app = express();
 const createError = require("http-errors");
-const history = require('connect-history-api-fallback')
+const fallback = require('connect-history-api-fallback')
 
 const io = require('./io')
 
 
 app.use(express.json());
 app.use('/io', io)
-app.use(history())
+app.use(fallback())  //app.use(fallback(__dirname + '/dist/app.html'))
 app.use('/', express.static(__dirname + '/site'))
 
 app.listen(1233, ()=>{
