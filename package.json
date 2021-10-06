@@ -18,6 +18,11 @@
   "homepage": "https://github.com/grphine/Remote-Boot#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "onoff": "^6.0.3"
+    "onoff": "^6.0.3",
+    
+    "http-errors": "^1.8.0",
+    
+    "connect": "^3.7.0",
+    "connect-history-api-fallback": "^1.6.0"
   }
 }
