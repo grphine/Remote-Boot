@@ -8,7 +8,7 @@ const io = require('./io')
 
 
 app.use(express.json());
-app.use('/io/', io)
+app.use('/io', io)
 app.use(fallback())  //app.use(fallback(__dirname + '/dist/app.html'))
 app.use('/', express.static(__dirname + '/site/dist'))
 

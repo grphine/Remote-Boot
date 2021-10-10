@@ -3,7 +3,7 @@ const router = express.Router()
 
 module.exports = router;
 
-router.get("status", (req, res)=>{
+router.get("/status", (req, res)=>{
     console.log('status requested')
     res.send(
         {
@@ -12,7 +12,7 @@ router.get("status", (req, res)=>{
         })
 })
 
-router.post('pwrBtn', (req, res)=>{
+router.post('/pwrBtn', (req, res)=>{
     console.log('power button pushed')
     res.send('pwr button push')
 })
