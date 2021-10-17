@@ -3,7 +3,7 @@ const router = express.Router()
 const gpio = require('onoff').Gpio
 
 const led = new gpio(17, 'out')
-var val = 1; //initial value
+var val = 0; //initial value
 
 module.exports = router;
 
@@ -18,6 +18,18 @@ router.get("/status", (req, res)=>{
 
 router.post('/pwrBtn', (req, res)=>{
     console.log('power button pushed')
+    ledSwitch()
     led.writeSync(val)
     res.send('pwr button push')
 })
+
+function ledSwitch(){
+    switch (val){
+        case 0:
+            val = 1
+            break
+        case 1:
+            val = 0
+            break;
+    }   
+}
