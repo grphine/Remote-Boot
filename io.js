@@ -17,9 +17,7 @@ router.get("/status", (req, res)=>{
 })
 
 router.post('/pwrBtn', (req, res)=>{
-    console.log('power button pushed')
-    ledSwitch()
-    led.writeSync(val)
+        ledSwitch()
     res.send('pwr button push')
 })
 
@@ -32,4 +30,8 @@ function ledSwitch(){
             val = 0
             break;
     }   
+
+    
+    led.writeSync(val)
+    console.log(val)
 }
